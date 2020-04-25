@@ -1,8 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth"
-import "firebase/firebase-firestore"
-import "firebase/firebase-storage"
-import { fireEvent } from "@testing-library/react";
+import "firebase/firestore"
+import "firebase/firestore"
+
 
 
 const config = {
@@ -20,6 +20,27 @@ class firebase{
         firebase.initializeApp(config);
         this.auth = firebase.auth();
         this.firestore = firebase.firestore();
+    }
+
+    async signin(email, password){
+        const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch(err =>{
+            console.log(err);
+        });
+        return user;
+    }
+
+    async login(email, password){
+        const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch(err =>{
+            console.log(err);
+        });
+        return user;
+    }
+
+    async logout(){
+        const logout = await firebase.auth().signOut().catch(err => {
+            console.log(err);
+        });
+        return logout;
     }
 }
 
