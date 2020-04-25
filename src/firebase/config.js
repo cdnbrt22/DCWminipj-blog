@@ -25,6 +25,7 @@ class Firebase{
     async signin(email, password){
         const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch( err => {
             console.log(err);
+            return err;
         });
         return user;
     }
@@ -32,6 +33,7 @@ class Firebase{
     async login(email, password){
         const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch( err => {
             console.log(err);
+            return err;
         });
         return user;
     }
@@ -46,6 +48,23 @@ class Firebase{
         return new Promise(resolve => {
             firebase.auth().onAuthStateChanged(resolve);
             });
+        
+    }
+
+    async createPost(post){
+        const storageRef = firebase.storage().ref();
+        const storageChild = storageRef.child(post.cover.name);
+        const postCover = await storageChild.put(post.cover);
+        const dowloadUrl = await storageChild.getDownloadURL();
+        const flieRef = postCover.ref.location.path;
+
+        let newPost = {
+            title: post.title,
+            content: post.content,
+            cover: dowloadUrl,
+            flieref: flieRef
+        }
+        await firebase.firestore().collection("posts").add(newPost);
         
     }
 }

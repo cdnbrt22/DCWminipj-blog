@@ -9,16 +9,22 @@ const Signin = () => {
     const [routeRedirect, setRedirect] = useState (false);
 
     const signin = async(e) => {
-        e.preventDefault(); //uesd to prevant the browser refres and reload
-        let user = await firebase.signin(email, password);
-        console.log(user);
-        setRedirect(true);
+        e.preventDefault();
+        let res = await firebase.signin(email, password);
+        if(res.hasOwnProperty("message")){
+            console.log(res.message);
+
+        }
+        if(res.hasOwnProperty("user")){
+            console.log(res.user);
+            setRedirect(true);
+        }
     }
 
     const redirect = routeRedirect;
-    if(redirect){
-        return <Redirect to="/" />
-    }
+        if(redirect){
+            return <Redirect to="/" />
+        }
 
     return(
         <React.Fragment>
