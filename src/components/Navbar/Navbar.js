@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
-// import firebase from "../firebase/config";
+// import firebase from "./firebase/config";
 
 
 
@@ -23,7 +23,7 @@ const Navbar = (props) =>{
             buttons = (
                 <React.Fragment>
                     <li><Link to="/signin">SignIn</Link></li>
-                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/login">LogIn</Link></li>
                 </React.Fragment>
             )
         }
@@ -33,10 +33,10 @@ const Navbar = (props) =>{
                 <ul>
                     <li><Link to="/">The travelers</Link></li>
                 </ul>
-                <ui>
-                    <li><Link to="/create">new post</Link></li>
+                <ul>
+                    <li><Link to="/create">New post</Link></li>
                     {buttons}
-                </ui>
+                </ul>
             </nav>
         )
 }
