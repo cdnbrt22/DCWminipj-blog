@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
-// import firebase from "./firebase/config";
+import firebase from "../../firebase/config";
 
 
 
@@ -8,8 +8,17 @@ const Navbar = (props) =>{
 
     const [userState, setuserState] = useState(null);
 
+    useEffect(() => {
+        firebase.getUserState().then(user => {
+            if(user){
+                setuserState(user);
+            }
+        })
+    })
     const logout = () => {
-        console.log("user is logged out");
+        firebase.logout();
+        setuserState(null);
+        props.history.replace("/login");
     }
 
     let buttons;

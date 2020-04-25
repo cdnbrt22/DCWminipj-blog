@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth"
-import "firebase/firebase-firestore"
+import "firebase/firestore"
 import "firebase/storage"
 
 
@@ -15,7 +15,7 @@ const config = {
     appId: "1:641010530067:web:dd0bd4babacdf6aead4ce6"
 }
 
-class firebase{
+class Firebase{
     constructor(){
         firebase.initializeApp(config);
         this.auth = firebase.auth();
@@ -23,16 +23,14 @@ class firebase{
     }
 
     async signin(email, password){
-        const user = await firebase.auth().createUserWithEmailAndPassword(email, password)
-        .catch( err => {
+        const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch( err => {
             console.log(err);
         });
         return user;
     }
 
     async login(email, password){
-        const user = await firebase.auth().signInWithEmailAndPassword(email, password)
-        .catch( err => {
+        const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch( err => {
             console.log(err);
         });
         return user;
@@ -43,7 +41,13 @@ class firebase{
             console.log(err);
         });
     }
-    
+
+    async getUserState(){
+        return new Promise(resolve => {
+            firebase.auth().onAuthStateChanged(resolve);
+            });
+        
+    }
 }
 
-export default new firebase;
+export default new Firebase();
