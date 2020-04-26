@@ -32,7 +32,7 @@ const Navbar = (props) =>{
             buttons = (
                 <React.Fragment>
                     <li><Link to="/signin">SignIn</Link></li>
-                    <li><Link to="/lo nagin">LogIn</Link></li>
+                    <li><Link to="/login">LogIn</Link></li>
                 </React.Fragment>
             )
         }

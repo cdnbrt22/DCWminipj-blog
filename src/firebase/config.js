@@ -57,14 +57,23 @@ class Firebase{
         const postCover = await storageChild.put(post.cover);
         const downloadURL = await storageChild.getDownloadURL();
         const fileRef = postCover.ref.location.path;
-
+ 
         let newPost = {
             title: post.title,
             content: post.content,
             cover: downloadURL,
             fileref: fileRef
         }
-        await firebase.firestore().collection("posts").add(newPost);}
-}
+ 
+        await firebase.firestore().collection("posts").add(newPost);
+    }
 
+    async getPosts(){
+        return await firebase.firestore().collection("posts").get();
+    }
+
+    async getPost(postid){
+        return await firebase.firestore().collection("posts").doc(postid).get();
+    }d
+}
 export default new Firebase();

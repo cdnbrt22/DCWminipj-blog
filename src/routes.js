@@ -8,8 +8,8 @@ import Create from './components/Create/Create'
 const Routes = () => (
     <Switch>
         <Route exact path="/" component = {Main} />
-        <Route exact path="/signin" component = {Signin} />
-        <Route exact path="/login" component = {Login} />
+        <Route exact path="/Signin" component = {Signin} />
+        <Route exact path="/Login" component = {Login} />
         <Route exact path="/create" component = {Create} />
     </Switch>
 )

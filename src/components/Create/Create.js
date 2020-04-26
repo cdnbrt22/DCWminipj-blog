@@ -19,6 +19,7 @@ const Create = () => {
             content,
             cover: cover[0]
         }
+
         await firebase.createPost(post).then(() => {
             console.log("Post created successfully");
             setIsBusy(false);
@@ -27,8 +28,8 @@ const Create = () => {
         }).catch(err => {
             console.log(err);
             setIsBusy(false);
-        
         })        
+
     }
     
     const redirect = routeRedirect;
@@ -41,29 +42,29 @@ const Create = () => {
     if(isBusy){
         createForm = <div className="processing">
                         <p>Request is being processed</p>
-                        <div className="load">Loading...</div>
+                        <div className="loader">Loading...</div>
                     </div>   
     }else{
         createForm = <form onSubmit={addPost}>
-                        <p>New post.</p>
-
-                        <label htmlFor="title =">Post title: </label>
-                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
-
-                        <label htmlFor="content">Post Content: </label>
-                        <textarea type="text" name="comtent" onChange={(e) => setContent(e.target.value)} />
-
-                        <label htmlFor="cover" className="cover">Cover</label>
-                        <input type="file" onChange={(e) => setCover(e.target.value)} />
+                        <p>Create a new post</p>
                         
-                        <input type="submit" value="submit" />
-        </form>
-        
+                        <label htmlFor="title">Post Title: </label>
+                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
+                        
+                        <label htmlFor="content">Post Content: </label>
+                        <textarea name="content"  onChange={(e) => setContent(e.target.value)}  ></textarea>
+                    
+                        <label htmlFor="cover" className="cover">Cover</label>
+                        <input type="file" onChange={(e) => setCover(e.target.files)} />
+
+                        <input type="submit" value="summit" />
+                    </form>
+
     }
 
     return(
         <React.Fragment>
-            <h1>Create a traveler's guide</h1>
+            <h1>Create a traveler guide</h1>
             {createForm}
         </React.Fragment>
     )
