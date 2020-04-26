@@ -6,13 +6,13 @@ import "firebase/storage"
 
 
 const config = {
-    apiKey: "AIzaSyDEGZCTYoX0c6zHMSGVD-ppVcSCGkpFnKI",
-    authDomain: "dcwminipj-blog.firebaseapp.com",
-    databaseURL: "https://dcwminipj-blog.firebaseio.com",
-    projectId: "dcwminipj-blog",
-    storageBucket: "gs://dcwminipj-blog.appspot.com",
-    messagingSenderId: "641010530067",
-    appId: "1:641010530067:web:dd0bd4babacdf6aead4ce6"
+    apiKey: "AIzaSyC664Ku9bIONQwiZxOBq5AfGEk-UyIiVZk",
+    authDomain: "dcw-minipj-blog.firebaseapp.com",
+    databaseURL: "https://dcw-minipj-blog.firebaseio.com",
+    projectId: "dcw-minipj-blog",
+    storageBucket: "gs://dcw-minipj-blog.appspot.com/",
+    messagingSenderId: "498925628654",
+    appId: "1:498925628654:web:c6099fe874dca51a6b97ff"
 }
 
 class Firebase{
@@ -55,18 +55,16 @@ class Firebase{
         const storageRef = firebase.storage().ref();
         const storageChild = storageRef.child(post.cover.name);
         const postCover = await storageChild.put(post.cover);
-        const dowloadUrl = await storageChild.getDownloadURL();
-        const flieRef = postCover.ref.location.path;
+        const downloadURL = await storageChild.getDownloadURL();
+        const fileRef = postCover.ref.location.path;
 
         let newPost = {
             title: post.title,
             content: post.content,
-            cover: dowloadUrl,
-            flieref: flieRef
+            cover: downloadURL,
+            fileref: fileRef
         }
-        await firebase.firestore().collection("posts").add(newPost);
-        
-    }
+        await firebase.firestore().collection("posts").add(newPost);}
 }
 
 export default new Firebase();

@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect, withRouter } from 'react-router-dom';
 import firebase from "../../firebase/config";
 
 
@@ -13,25 +13,22 @@ const Login = () => {
         let res = await firebase.login(email, password);
         if(res.hasOwnProperty("message")){
             console.log(res.message);
-
         }
         if(res.hasOwnProperty("user")){
             console.log(res.user);
             setRedirect(true);
         }
-        
-        
     }
-
     const redirect = routeRedirect;
-        if(redirect) {
-            return <Redirect to="/" />
+        if(redirect){
+            return <Redirect to="/" />  
         }
 
     return(
         <React.Fragment>
             <form onSubmit={login}>
-                <h1 className="header">Wellcom The travelers</h1>
+                <h1 className="header">Wellcom The traveler</h1>
+
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
 
