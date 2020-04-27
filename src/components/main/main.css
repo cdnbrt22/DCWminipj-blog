@@ -1,0 +1,52 @@
+.header{
+    font-family: 'Julius Sans One', sans-serif;
+    background: url("https://static.readytotrip.com/upload/information_system_24/1/6/1/item_1612674/information_items_property_14706952.jpg")right;
+    height:300px;
+}
+
+.header h1{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 40px 40px;
+}
+
+.header h2{
+    font-family: 'Kodchasan', sans-serif;
+    width: 45%;
+    margin: 20px 100px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.post > p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    text-align: left;
+    margin: 15px 40px;
+}
+  
+.post {
+    width: 400px;
+    margin: 100px 40px;
+    position: relative;
+    align-items: center;
+    border: 3px solid #73AD21;  
+}
+  
+.post > a div{
+    margin: 0px;
+    display: block;
+    height: 250px;
+    background-position: center;
+    background-size: 120%; 
+}
+
+  .post:hover > a div{
+    background-size: 100%;
+}

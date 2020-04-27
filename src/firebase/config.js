@@ -37,7 +37,7 @@ class Firebase{
         });
         return user;
     }
-
+    
     async logout(){
         await firebase.auth().signOut().catch( err => {
             console.log(err);
@@ -74,6 +74,7 @@ class Firebase{
 
     async getPost(postid){
         return await firebase.firestore().collection("posts").doc(postid).get();
-    }d
+    }
+
 }
 export default new Firebase();

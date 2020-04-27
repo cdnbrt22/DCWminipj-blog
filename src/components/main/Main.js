@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import firebase from "../../firebase/config";
+import './main.css'
 
 
 const Main = () => {
@@ -24,10 +25,16 @@ const Main = () => {
     }, []);
 
     return (
+        
         <React.Fragment>
-            <header>
-                <h1>Main</h1>
+            
+            <header className="header">
+                
+                <img className="img" />
+                <h1>The traveler</h1>
+                <h2>" แชร์เที่ยวการท่องเที่ยวด้วยตัวเองแบบไม่เหมือนใคร ไม่ต้องพึ่งทัวร์ ไม่ได้มีงบจำกัด เดินทางไม่ลำบากมาก แต่ก็ไม่หรูเกินไป "</h2>
             </header>
+           
             <div className="posts">
                 {posts.map(p => {
                     return(
@@ -42,6 +49,7 @@ const Main = () => {
                 })}
             </div>
         </React.Fragment>
+        
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import firebase from "../../firebase/config";
-
+import './Navbar.css'
 
 
 const Navbar = (props) =>{
@@ -38,14 +38,18 @@ const Navbar = (props) =>{
         }
 
         return(
-            <nav>
+            <nav className="navbar">
                 <ul>
-                    <li><Link to="/">The travelers</Link></li>
+                    <li><Link to="/">The taveler blog</Link></li>
                 </ul>
+                
                 <ul>
-                    <li><Link to="/create">New post</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/create">New Post</Link></li>
                     {buttons}
                 </ul>
+                
+
             </nav>
         )
 }
