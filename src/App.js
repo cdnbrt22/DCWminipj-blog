@@ -1,16 +1,14 @@
 import React from 'react';
-
-
-import Navbar from './components/Navbar/Navbar';
 import Routes from './routes';
-
+import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+     
       <main>
+        {/* <Navbar /> */}
         <Routes />
       </main>
     </div>

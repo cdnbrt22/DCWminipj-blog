@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import firebase from "../../firebase/config"
-
+import Navbar from '../Navbar/Navbar'
 
 const Signin = () => {
     const [email, setEmail] = useState("");
@@ -21,6 +21,19 @@ const Signin = () => {
         }
     }
 
+    const signInGoogle = () => {
+        firebase.loginGoogle()
+            .then(function (result) {
+                console.log(result);
+                console.log("Sucess Google Account ");
+            })
+            .catch(function (err) {
+                console.log(err);
+                console.log("Failed");
+            });
+        }
+    
+
     const redirect = routeRedirect;
         if(redirect){
             return <Redirect to="/" />
@@ -28,7 +41,8 @@ const Signin = () => {
 
     return(
         <React.Fragment>
-            <form onSubmit={signin} className="f">
+            <Navbar/>
+            <form onSubmit={signin} className="f">  
                 <h1>Create Account</h1>
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
@@ -37,6 +51,7 @@ const Signin = () => {
                 <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} /> 
 
               <br/><input type="submit" value="Create Account" className="bt" />
+              <br/><button onClick={() => signInGoogle()} >Sign in with Google</button>
             </form>
         </React.Fragment>
     )

@@ -31,6 +31,7 @@ const Post = (props) => {
         setTimer(true);
         setPostId(props.match.params.id);
         getPost(props.match.params.id);
+        
 
         firebase.getUserState().then(user => {
             if(user){
@@ -54,7 +55,8 @@ const Post = (props) => {
         const post = {
             id: postid,
             title: titleRef.current.value,
-            content: contentRef.current.value
+            content: contentRef.current.value,
+            fileRef: fileRef.current.value
         }
 
         if(fileRef.current.files.length > 0){
@@ -74,6 +76,8 @@ const Post = (props) => {
     
     const toggleEditMode = () => {
         setEditMode(!editMode);
+        
+        
     }
     const deleteCurrentPost = () => {
         firebase.deletePost(postid, post.fileref)
@@ -108,7 +112,7 @@ const Post = (props) => {
                                 <label htmlFor="content">Content: </label>
                                 <textarea name="content" className="con" ref={contentRef} defaultValue={post.content} ></textarea> 
 
-                                <label htmlFor="cover" className="cover">Cover</label>
+                                <label htmlFor="cover" className="cover">Image</label>
                                 <input type="file" ref={fileRef} />
                                 <br/>
                                 <input type="submit" value="Update Post" className="bt" />
@@ -123,7 +127,7 @@ const Post = (props) => {
     
     if(timer){
         currentPost = <div className="processing">
-                      <p>LOADING Post</p>
+                      <p>LOADING...</p>
                       <div className="loader">LOADING...</div>
         </div>
     }
@@ -136,6 +140,7 @@ const Post = (props) => {
                         <img src={post.cover} />
                         <h4>{post.title}</h4>
                         <div>{post.content}</div>
+                        <div>{post.file}</div>
                         <br/>
                         {editButton}
                         {updateForm}

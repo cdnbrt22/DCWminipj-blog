@@ -11,6 +11,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-firebaseui": "^4.1.0",
     "react-hooks-carousel": "^1.1.4",
     "react-resolve": "^1.0.3",
     "react-responsive-carousel": "^3.2.5",

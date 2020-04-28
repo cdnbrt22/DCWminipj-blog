@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import firebase from "../../firebase/config";
+import Navbar from '../Navbar/Navbar'
 import './main.css'
 
 
@@ -29,7 +30,7 @@ const Main = () => {
         <React.Fragment>
             
             <header className="header">
-                
+                <Navbar />
                 <img className="img" />
                 {/* <h1>The traveler</h1> */}
                 <h2>" แชร์การท่องเที่ยวด้วยตัวเองแบบไม่เหมือนใคร ไม่ต้องพึ่งทัวร์ เดินทางไม่ลำบากมาก แต่ก็ไม่หรูเกินไป เพียงแค่เป็นสมาชิกของ The traveler "</h2>
