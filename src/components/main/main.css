@@ -1,21 +1,29 @@
 .header{
     font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    margin-left: auto;
+
     height: 400px;
-    position: relative;
+    min-width: 10px;
+    /* position: relative; */
     background: url("https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")center;
     overflow: hidden;
 }
 
-.header h1{
-    font-size: 28px;
+.post > h1{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
     font-weight: bold;
-    margin: 40px 40px;
+    color: #222;
+    text-decoration: none;
+    text-align: left;
+    margin: 15px 15px;
 }
 
 .header h2{
     font-family: 'Kodchasan', sans-serif;
     width: 32%;
-    margin: 20px 100px;
+    margin: 40px 320px;
     color: rgb(104, 102, 102);
 }
 
@@ -26,12 +34,13 @@
 }
   
 .post > p {
+    font-family: 'Kodchasan', sans-serif;
     font-size: 20px;
-    font-weight: bold;
+    
     color: #222;
     text-decoration: none;
     text-align: left;
-    margin: 15px 40px;
+    margin: 15px 50px;
 }
   
 .post {
@@ -39,7 +48,7 @@
     margin: 100px 40px;
     position: relative;
     align-items: center;
-    border: 3px solid #73AD21;  
+    /* border: 3px solid #73AD21;   */
 }
   
 .post > a div{
@@ -48,8 +57,13 @@
     height: 250px;
     background-position: center;
     background-size: 120%; 
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-  .post:hover > a div{
+.post:hover > a div{
     background-size: 100%;
+}
+
+.pp{
+    text-align: center;
 }

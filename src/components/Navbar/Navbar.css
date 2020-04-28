@@ -26,3 +26,7 @@
   color: black;
   padding: 0 10px;
 }
+
+.hover:hover{
+  color: wheat;
+}

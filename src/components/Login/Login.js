@@ -1,6 +1,7 @@
 import React , { useState } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import firebase from "../../firebase/config";
+import '../form.css';
 
 
 const Login = () => {
@@ -27,8 +28,8 @@ const Login = () => {
 
     return(
         <React.Fragment>
-            <form onSubmit={login}>
-                <h1 className="header3">Wellcom the traveler</h1>
+            <form className="f" onSubmit={login}>
+                <h1>Wellcom the traveler</h1>
 
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange={(e) => setEmail(e.target.value) }/>
@@ -36,7 +37,7 @@ const Login = () => {
                 <label htmlFor="password">Password: </label>
                 <input name="password" type="password" onChange={(e) => setPassword(e.target.value)} />
 
-                <input type="submit" value="Login" />
+                <br/><input type="submit" value="Login" className="bt" />
             </form>
         </React.Fragment>
     )

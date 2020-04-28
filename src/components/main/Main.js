@@ -32,18 +32,18 @@ const Main = () => {
                 
                 <img className="img" />
                 {/* <h1>The traveler</h1> */}
-                <h2>" แชร์การท่องเที่ยวด้วยตัวเองแบบไม่เหมือนใคร ไม่ต้องพึ่งทัวร์ เดินทางไม่ลำบากมาก แต่ก็ไม่หรูเกินไป "</h2>
+                <h2>" แชร์การท่องเที่ยวด้วยตัวเองแบบไม่เหมือนใคร ไม่ต้องพึ่งทัวร์ เดินทางไม่ลำบากมาก แต่ก็ไม่หรูเกินไป เพียงแค่เป็นสมาชิกของ The traveler "</h2>
             </header>
            
             <div className="posts">
                 {posts.map(p => {
                     return(
                         <div className="post" key={p.id}>
-                            <p>{p.data.title}</p>
-
+                            <h1>{p.data.title}</h1>
                             <Link to={"post/" + p.id}>
                                 <div style={{backgroundImage: "url(" + p.data.cover + ")" }} />
                             </Link>
+                            {/* <p><br/>{p.data.content}</p> */}
                         </div>
                     )
                 })}

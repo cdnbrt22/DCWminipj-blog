@@ -53,26 +53,25 @@ const Create = (props) => {
                         <div className="loader">Loading...</div>
                     </div>   
     }else{
-        createForm = <form onSubmit={addPost}>
-                        <p>Create a new post</p>
+        createForm = <form onSubmit={addPost} className="f">
+                        <h1>Share traveler guide</h1>
                         
                         <label htmlFor="title">Post Title: </label>
                         <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
                         
-                        <label htmlFor="content">Post Content: </label>
-                        <textarea name="content"  onChange={(e) => setContent(e.target.value)}  ></textarea>
+                        <label htmlFor="content">Content: </label>
+                        <textarea name="content" className="con"  onChange={(e) => setContent(e.target.value)}  ></textarea>
                     
-                        <label htmlFor="cover" className="cover">Cover</label>
+                        <label htmlFor="cover" className="cover">Image</label>
                         <input type="file" onChange={(e) => setCover(e.target.files)} />
 
-                        <input type="submit" value="summit" />
+                        <br/><input type="submit" value="SUBMIT" className="bt" />
                     </form>
 
     }
 
     return(
         <React.Fragment>
-            <h1>Create a traveler guide</h1>
             {createForm}
         </React.Fragment>
     )

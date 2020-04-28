@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 import firebase from "../../firebase/config";
 import './post.css'
 
+
 const Post = (props) => {
     const [timer, setTimer] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -41,7 +42,8 @@ const Post = (props) => {
 
 
     }, [props.match.params.id])
-
+    
+    
     let currentPost;
     let editButton;
     let deleteButton;
@@ -50,7 +52,7 @@ const Post = (props) => {
         e.preventDefault();
         setIsBusy(true);
         const post = {
-            //id: postid,
+            id: postid,
             title: titleRef.current.value,
             content: contentRef.current.value
         }
@@ -91,7 +93,7 @@ const Post = (props) => {
 
     let updateForm;
     if(editMode){
-        deleteButton = <button className="delete" onClick={(e) => deleteCurrentPost()}>Delete Post</button>
+        deleteButton = <input type="submit" value="Delete Post" className="btd" onClick={(e) => deleteCurrentPost()} />
         if(isBusy){
             updateForm =  <div className="processing">
                             <p>Request is being processed</p>
@@ -99,21 +101,22 @@ const Post = (props) => {
                           </div> 
         }else{
             updateForm = <React.Fragment>
-                            <form className="editForm" onSubmit={updateCurrentPost}>
-                                <label htmlFor="title">Post Title: </label>
+                            <form className="editForm" onSubmit={updateCurrentPost} className="f">
+                                <label htmlFor="title">Title: </label>
                                 <input type="text" name="title" ref={titleRef} defaultValue={post.title} />    
 
-                                <label htmlFor="content">Post Content: </label>
-                                <textarea name="content" ref={contentRef} defaultValue={post.content} ></textarea> 
+                                <label htmlFor="content">Content: </label>
+                                <textarea name="content" className="con" ref={contentRef} defaultValue={post.content} ></textarea> 
 
                                 <label htmlFor="cover" className="cover">Cover</label>
                                 <input type="file" ref={fileRef} />
-
-                                <input type="submit" value="update post" />
-                            
+                                <br/>
+                                <input type="submit" value="Update Post" className="bt" />
+                                <br/>
+                                {deleteButton}
                             </form>   
-
-                         {deleteButton}
+                            
+                         
                          </React.Fragment>
         }
     }
@@ -123,15 +126,17 @@ const Post = (props) => {
                       <p>LOADING Post</p>
                       <div className="loader">LOADING...</div>
         </div>
-    }else{
+    }
+    else{
         if(userState){
             editButton = <button className="edit" onClick={(e) => toggleEditMode()}>Edit Post</button>
         }
-        currentPost = <div className="single">
+        currentPost = <div className="showimg">
+                        <br/>
                         <img src={post.cover} />
                         <h4>{post.title}</h4>
                         <div>{post.content}</div>
-
+                        <br/>
                         {editButton}
                         {updateForm}
         </div>

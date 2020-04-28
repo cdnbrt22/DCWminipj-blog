@@ -25,15 +25,15 @@ const Navbar = (props) =>{
         if(userState != null){
             buttons = (
                 <React.Fragment>
-                <li><Link to="/create">New Post</Link></li>
-                <li><button className="logout" onClick={logout}>logout</button></li>
+                <li><Link to="/create" className="hover">New Post</Link></li>
+                <li><Link to="/" className="hover" onClick={logout}>Logout</Link></li>
                 </React.Fragment>
             )
         }else{
             buttons = (
                 <React.Fragment>
-                    <li><Link to="/signin">SignIn</Link></li>
-                    <li><Link to="/login">LogIn</Link></li>
+                    <li><Link to="/signin" className="hover">SignIn</Link></li>
+                    <li><Link to="/login" className="hover">LogIn</Link></li>
                 </React.Fragment>
             )
         }
@@ -45,7 +45,7 @@ const Navbar = (props) =>{
                 </ul>
                 
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/" className="hover">Home</Link></li>
                     
                     {buttons}
                 </ul>
