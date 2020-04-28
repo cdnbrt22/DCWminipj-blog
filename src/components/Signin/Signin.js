@@ -29,7 +29,7 @@ const Signin = () => {
     return(
         <React.Fragment>
             <form onSubmit={signin}>
-                <h1 className="header">The Travelers</h1>
+                <h1 className="header2">The Traveler</h1>
                 <p>Create a new Account</p>
 
                 <label htmlFor="email">Email: </label>

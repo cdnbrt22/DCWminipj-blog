@@ -28,7 +28,7 @@ const Login = () => {
     return(
         <React.Fragment>
             <form onSubmit={login}>
-                <h1 className="header">Wellcom the traveler</h1>
+                <h1 className="header3">Wellcom the traveler</h1>
 
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" onChange={(e) => setEmail(e.target.value) }/>

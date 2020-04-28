@@ -1,7 +1,9 @@
 .header{
     font-family: 'Julius Sans One', sans-serif;
-    background: url("https://static.readytotrip.com/upload/information_system_24/1/6/1/item_1612674/information_items_property_14706952.jpg")right;
-    height:300px;
+    height: 400px;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")center;
+    overflow: hidden;
 }
 
 .header h1{
@@ -12,8 +14,9 @@
 
 .header h2{
     font-family: 'Kodchasan', sans-serif;
-    width: 45%;
+    width: 32%;
     margin: 20px 100px;
+    color: rgb(104, 102, 102);
 }
 
 .posts {

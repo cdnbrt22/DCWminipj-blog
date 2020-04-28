@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import firebase from "../../firebase/config";
 
 
-const Create = () => {
+const Create = (props) => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [cover, setCover] = useState("");
@@ -31,6 +31,14 @@ const Create = () => {
         })        
 
     }
+    
+    useEffect(() => {
+        firebase.getUserState().then(user => {
+            if(!user){
+                props.history.replace("/login");
+            }
+        })
+    })
     
     const redirect = routeRedirect;
     if(redirect){
