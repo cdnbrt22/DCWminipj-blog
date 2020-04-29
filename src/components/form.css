@@ -28,14 +28,21 @@ text-align: center;
   }
 
 .bt{
-    
-    background-color: #73AD21;
+  background-color: #73AD21;
+}
+
+.bt:hover{
+  background-color: rgb(162, 245, 46);
 }
 
 .btd{
-    
     background-color: rgb(173, 33, 33);
 }
+
+.btd:hover{
+  background-color: rgb(255, 7, 7);
+}
+
 .con{
     margin: auto;
     width: 100%;

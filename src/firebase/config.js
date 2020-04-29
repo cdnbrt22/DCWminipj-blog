@@ -124,15 +124,14 @@ class Firebase{
         return await firebase.firestore().collection("posts").doc(postId).delete();
     }
 
-    async loginGoogle(email, password){
-        const user = firebase.auth().GoogleAuthProvider(email, password);
-        await firebase.auth().signInWithPopup(email, password).catch(err => {
-            console.log(err)
-            return err;
-        });
-        return user;
+    async googleLogin(){
+        const googleProvider = new firebase.auth.GoogleAuthProvider();
+        await firebase.auth().signInWithPopup(googleProvider);
     }
-    
-    
+
+    async facebookLogin(){
+        const facebookProvider = new firebase.auth.FacebookAuthProvider();
+        await firebase.auth().signInWithPopup(facebookProvider);
+    }
 }
 export default new Firebase();

@@ -51,7 +51,7 @@ const Signin = () => {
                 <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} /> 
 
               <br/><input type="submit" value="Create Account" className="bt" />
-              <br/><button onClick={() => signInGoogle()} >Sign in with Google</button>
+              {/* <br/><button onClick={() => signInGoogle()} >Sign in with Google</button> */}
             </form>
         </React.Fragment>
     )

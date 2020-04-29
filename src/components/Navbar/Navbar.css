@@ -1,4 +1,4 @@
-.navbar{
+.n{
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
@@ -6,21 +6,21 @@
   
 }
 
-.navbar ul{
+.n ul{
   margin: 0px 5px;
   padding: 0;
 }
 
-.navbar ul li{
+.n ul li{
   list-style: none;
   display: inline-block;
 }
 
-.navbar ul li a{
+.n ul li a{
   font-family: 'Caveat', cursive;
   text-decoration: none;
   display: block;
-  font-size: 28px;
+  font-size: 40px;
   text-transform: capitalize;
   font-weight: bold;
   color: black;
@@ -28,5 +28,7 @@
 }
 
 .hover:hover{
-  color: wheat;
+  color: rgb(145, 144, 144);
 }
+
+.ttp{}

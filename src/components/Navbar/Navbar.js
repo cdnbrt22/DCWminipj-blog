@@ -39,9 +39,9 @@ const Navbar = (props) =>{
         }
 
         return(
-            <nav className="navbar">
+            <nav className="n">
                 <ul>
-                    <li><Link to="/">The taveler blog</Link></li>
+                    <li><Link to="/" className="ttb">The taveler blog</Link></li>
                 </ul>
                 
                 <ul>

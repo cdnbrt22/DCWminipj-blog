@@ -2,6 +2,7 @@ import React , {useEffect, useState, useRef} from "react";
 import { Redirect } from 'react-router';
 import firebase from "../../firebase/config";
 import './post.css'
+import Navbar from '../Navbar/Navbar'
 
 
 const Post = (props) => {
@@ -105,7 +106,9 @@ const Post = (props) => {
                           </div> 
         }else{
             updateForm = <React.Fragment>
+                            
                             <form className="editForm" onSubmit={updateCurrentPost} className="f">
+                            
                                 <label htmlFor="title">Title: </label>
                                 <input type="text" name="title" ref={titleRef} defaultValue={post.title} />    
 
@@ -149,6 +152,7 @@ const Post = (props) => {
 
     return(
         <React.Fragment>
+            <Navbar />
             {currentPost}
         </React.Fragment>
     )
