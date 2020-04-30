@@ -70,25 +70,14 @@ input[type=password] {
 }
 
 
-.processing {
-    width: 40%;
-    margin: 120px auto;
-    text-align: center;
-  }
 
-/* .bt{
-  background-color: #73AD21;
-}
 
-.bt:hover{
-  background-color: rgb(162, 245, 46); */
-/* } */
 
-.btd{
+/* .btd{
     background-color: rgb(173, 33, 33);
-}
+} */
 
-.btd:hover{
+/* .btd:hover{
   background-color: rgb(255, 7, 7);
 }
 
@@ -107,7 +96,7 @@ input[type=password] {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 
-}
+} */
 
 .processing {
     width: 40%;

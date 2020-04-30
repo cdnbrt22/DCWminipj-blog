@@ -1,0 +1,37 @@
+.c{
+    font-family: 'Kodchasan', sans-serif;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    min-height: 30%;
+    width: 30%;
+    overflow-y: auto;
+    background-color: silver;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    z-index: 101;
+    padding: 40px;
+}
+
+
+.c label{
+    text-align: left;
+    width: 100%;  
+}
+
+.title{
+    text-align: left;
+    margin: 0px;
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    display: block; 
+}
+
+.content {
+    text-align: left;
+    width: 100%;
+    padding: 10px 0px 200px 0px ;
+    margin: auto;
+    box-sizing: border-box;
+}   

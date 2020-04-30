@@ -99,6 +99,7 @@ const Post = (props) => {
     let updateForm;
     if(editMode){
         deleteButton = <input type="submit" value="Delete Post" className="btd" onClick={(e) => deleteCurrentPost()} />
+        
         if(isBusy){
             updateForm =  <div className="processing">
                             <p>Request is being processed</p>
@@ -107,18 +108,19 @@ const Post = (props) => {
         }else{
             updateForm = <React.Fragment>
                             
-                            <form className="editForm" onSubmit={updateCurrentPost} className="f">
+                            <form className="ed" onSubmit={updateCurrentPost} >
                             
                                 <label htmlFor="title">Title: </label>
-                                <input type="text" name="title" ref={titleRef} defaultValue={post.title} />    
+                                <input type="text" className="title" ref={titleRef} defaultValue={post.title} />    
 
                                 <label htmlFor="content">Content: </label>
-                                <textarea name="content" className="con" ref={contentRef} defaultValue={post.content} ></textarea> 
+                                <textarea className="content" ref={contentRef} defaultValue={post.content} ></textarea> 
 
-                                <label htmlFor="cover" className="cover">Image</label>
-                                <input type="file" ref={fileRef} />
+                                <label htmlFor="cover" className="cover">Image: </label>
+                                <input type="file" ref={fileRef} /><br/>
                                 <br/>
                                 <input type="submit" value="Update Post" className="bt" />
+                                <br/>
                                 <br/>
                                 {deleteButton}
                             </form>   

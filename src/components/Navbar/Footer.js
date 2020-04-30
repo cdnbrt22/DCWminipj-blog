@@ -19,7 +19,7 @@ const Footer = () => {
                     <span class="fa fa-github"></span>
                 </a>
 
-                <a class="btn btn-social-icon btn-pinterest" href="https://github.com/cdnbrt22/DCWminipj-blog">
+                <a class="btn btn-social-icon btn-pinterest" href="https://www.youtube.com/watch?v=nGkWCHccKAY">
                     <span class="fa fa-youtube"></span>
                 </a>
                 <br/><br/>

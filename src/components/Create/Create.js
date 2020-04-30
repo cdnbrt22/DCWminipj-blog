@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from "react-router-dom";
 import firebase from "../../firebase/config";
+import Navbar from '../Navbar/Navbar';
+import './create.css'
 
 
 const Create = (props) => {
@@ -53,17 +55,17 @@ const Create = (props) => {
                         <div className="loader">Loading...</div>
                     </div>   
     }else{
-        createForm = <form onSubmit={addPost} className="f">
+        createForm = <form onSubmit={addPost} className="c">
                         <h1>Share traveler guide</h1>
                         
-                        <label htmlFor="title">Post Title: </label>
-                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
+                        <label htmlFor="title">Title: </label>
+                        <input type="text" className="title" onChange={(e) => setTitle(e.target.value)} />
                         
                         <label htmlFor="content">Content: </label>
-                        <textarea name="content" className="con"  onChange={(e) => setContent(e.target.value)}  ></textarea>
+                        <textarea className="content"  onChange={(e) => setContent(e.target.value)}  ></textarea>
                     
                         <label htmlFor="cover" className="cover">Image</label>
-                        <input type="file" onChange={(e) => setCover(e.target.files)} />
+                        <input type="file" onChange={(e) => setCover(e.target.files)} /><br/>
 
                         <br/><input type="submit" value="SUBMIT" className="bt" />
                     </form>
@@ -72,7 +74,8 @@ const Create = (props) => {
 
     return(
         <React.Fragment>
-            {createForm}
+            <Navbar/>
+            <br/>{createForm}
         </React.Fragment>
     )
 }
