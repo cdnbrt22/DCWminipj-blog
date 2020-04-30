@@ -48,7 +48,7 @@ const Signin = () => {
                 <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
 
                 <label htmlFor="password">Password: </label>
-                <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} /> 
+                <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} /><br/>
 
               <br/><input type="submit" value="Create Account" className="bt" />
               {/* <br/><button onClick={() => signInGoogle()} >Sign in with Google</button> */}

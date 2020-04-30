@@ -31,4 +31,17 @@
   color: rgb(145, 144, 144);
 }
 
-.ttp{}
+.btm{
+  font-family: 'Kodchasan', sans-serif;
+  background-color: cornflowerblue;
+  border: 1px cornflowerblue;
+  font-weight: bold;
+  width: 10%;
+  padding: 10px ;
+  margin: auto 10px;
+}
+
+.btm:hover{
+  background-color: rgb(90, 132, 211);
+  border: 1px rgb(90, 132, 211);
+}

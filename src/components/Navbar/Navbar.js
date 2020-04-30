@@ -7,6 +7,8 @@ import './Navbar.css'
 const Navbar = (props) =>{
 
     const [userState, setuserState] = useState(null);
+    
+   
 
     useEffect(() => {
         firebase.getUserState().then(user => {
@@ -33,12 +35,14 @@ const Navbar = (props) =>{
             buttons = (
                 <React.Fragment>
                     <li><Link to="/signin" className="hover">SignIn</Link></li>
-                    <li><Link to="/login" className="hover">LogIn</Link></li>
+                    <li><Link to="/Signup" className="hover" >Sign up</Link></li>
+                    
                 </React.Fragment>
             )
         }
 
         return(
+            
             <nav className="n">
                 <ul>
                     <li><Link to="/" className="ttb">The taveler blog</Link></li>

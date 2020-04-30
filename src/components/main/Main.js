@@ -41,6 +41,7 @@ const Main = () => {
                     return(
                         <div className="post" key={p.id}>
                             <h1>{p.data.title}</h1>
+                            {/* <p>{p.id}</p> */}
                             <Link to={"post/" + p.id}>
                                 <div style={{backgroundImage: "url(" + p.data.cover + ")" }} />
                             </Link>
